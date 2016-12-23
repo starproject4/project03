@@ -1,0 +1,198 @@
+       body {
+            background-color: #9b1b10;
+            /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+        }
+        .content{
+            margin-top:50px;
+            padding-top:20px;
+        }
+        .navbar>.container{
+            position:relative;
+        }
+        .navbar-brand{
+            position:fixed;
+            left: 0px;
+            top: -10px;
+            
+        }
+        .navbar-brand img{ /* 로고 */
+            width:40px;
+            height:40px;
+        }
+        .navbar-header{
+            text-align:right;
+        }
+        .navbar-header>.login-bar{ /* 모바일에서 보이는 로그인바 */
+            display:block;
+            position:absolute;
+            right:60px;
+            top:15px;
+            width:350px;
+        } 
+        .navbar-header>button.navbar-toggle{
+            float:right;
+        }
+        .dropdown-toggle>span{
+            font-size:10px;
+            padding-left:5px;
+        }
+       
+        #bs-example-navbar-collapse-1>.login-bar{/* 768px부터 보이는 로그인바 */
+            display:none;
+        }
+        .login-bar div a{ /* login, logout ment의 a */              
+            background-color:inherit;
+            border:none;
+            padding:0 10px;
+            color:#aaa;
+        } 
+        .login-bar div a:hover{
+            background-color:inherit;
+            color:#fff;
+        }
+        /* .loggedIn{
+           display:none; 
+            display:block;
+        }  */
+        .loggedOut{
+            /* display:block; */
+            /*display:none;  */
+        }
+        .login-bar div a:last-child{
+            margin-right:30px;
+        }
+        .login-bar>a{
+            padding:0;
+        }
+        .navbar-header{
+            /*width:50%; */
+        }
+        .navbar-header > button { /* 메뉴 토글버튼 */
+            width:auto;
+        }
+        .navbar-nav{
+            float:right;
+        }
+        .navbar-nav>li{
+            width:200px;
+        }
+        .navbar-nav li{ /* 메뉴바 */
+            /*padding : 0 2%;*/
+        }
+       
+        .user-main-visual{ /* 본문 메인 이미지 */
+            height:auto;
+        }
+        
+        .user-side{
+            
+        }
+        .footer{
+            /*position:absolute;
+            position:fixed;
+            bottom:0;*/
+            width:100%; 
+            background-color:#222;
+            padding:20px 0;
+        }
+        .footer>.container>div{
+            padding:5px 0;
+        }
+        .footer a{
+            color:#999;
+            font-size:13px;
+            
+        }
+        .policy{
+        }
+        .policy>a{
+            font-size:12px;
+            padding:4px 5px;
+        }
+        .policy>a:after{ /* 이건 또 왜 링크를 같이 먹고 있니.. */
+            display:inline;
+            content:"|";
+            padding-left:13px;
+            text-decoration:none;
+        }
+        .policy>a:last-child:after{
+            display:none;
+        }
+    @media (max-width: @screen-xs-max) { ... }
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { ... }
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) { ... }
+    @media (min-width: @screen-lg-min) { ... }  
+        
+    /* 매우 작은 기기들 (모바일폰, 768px 보다 작은) */
+    /* 부트스트랩에서 이것은 기본이므로 미디어쿼리가 없습니다. */
+
+    /* 작은 기기들 (태블릿, 768px 이상 @screen-sm-min) */
+    @media (min-width: 768px) {
+        body{
+            background-color:antiquewhite;
+        }
+        .content{
+            margin-top:80px;            
+        }
+        .navbar-brand{
+            left:2%;
+        }
+        .navbar-brand img{ /* 로고 */
+            width:70px;
+            height:70px;
+        }
+        .navbar-header>.login-bar{
+            display:none;  
+            background-color:red;
+            
+        } 
+        #bs-example-navbar-collapse-1>.login-bar{ /* 768px부터 보이는 로그인바 */    
+            display:block;
+            width:50%;
+            height:30px;
+            line-height:30px;
+            float:right;  
+            text-align:right; 
+        }
+        .collapse .navbar-collapse{
+          /*position : absolute;
+            right:10px;*/
+            
+        }
+         .navbar-nav{
+             width:70%;
+             float:right;
+             text-align:right;
+        }
+        .navbar-nav>li{
+            width:auto;
+        }
+        .lead{
+           /* width:100%;*/
+            height:100%;
+        }
+        /*.user-side>div{
+            /* width:260px;
+            height:310px;
+            margin:10px;
+            outline:1px solid ;
+        }*/
+        
+        
+        }
+    /* ~970px까지 col-md-가 안 먹음???? */
+    /* 중간 기기들 (데스크탑, 992px 이상 @screen-md-min) */
+    @media (min-width: 992px) { 
+        .navbar-brand{
+            position:absolute;
+            left: 10px;
+            top: -10px;
+            
+        }
+        }
+
+    /* 큰 기기들 (큰 데스크탑, 1200px 이상) */
+        
+    @media (min-width: @screen-lg-min) { 
+        
+        }

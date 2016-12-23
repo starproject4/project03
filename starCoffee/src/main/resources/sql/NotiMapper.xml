@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <!-- NotiVo bean = (NotiVo)session.selectAll("com.hb.star.noti.model.NotiDao")  -->
+  <mapper namespace="com.hb.star.model.NotiDao">
+  	<select id="selectAll" resultType="com.hb.star.model.NotiVo">
+  	SELECT * FROM NOTICE
+  	</select>
+  	<select id="selectAll2" parameterType="int" resultType="com.hb.star.model.NotiVo">
+  	SELECT * FROM NOTICE
+  	</select>
+  	<select id="selectOne" parameterType="int" resultType="com.hb.star.model.NotiVo">
+  	SELECT * FROM NOTICE WHERE NO=#{no}
+  	</select>
+  	<insert id="insertOne" parameterType="com.hb.star.model.NotiVo">
+  	INSERT INTO NOTICE VALUES(NOTICE_SEQ.NEXTVAL, #{title}, SYSDATE, 0, #{content})
+  	</insert>
+  	<update id="updateCount" parameterType="com.hb.star.model.NotiVo">
+  	UPDATE NOTICE SET COUNT=#{count} WHERE NO=#{no}
+  	</update>
+  	<update id="updateOne" parameterType="com.hb.star.model.NotiVo">
+  	UPDATE NOTICE SET TITLE=#{title}, CONTENT=#{content} WHERE NO=#{no}
+  	</update>
+  	<delete id="deleteOne" parameterType="int">
+  	DELETE FROM NOTICE WHERE NO=#{no}
+  	</delete>
+  </mapper>

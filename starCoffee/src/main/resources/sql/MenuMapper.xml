@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.hb.star.model.MenuDao">
+  	<select id="selectAll" resultType="com.hb.star.model.MenuVo">
+  		SELECT * FROM MENU
+  	</select>
+  	<insert id="insertOne" parameterType="com.hb.star.model.MenuVo">
+  		INSERT INTO MENU VALUES(MENU_SEQ.NEXTVAL,#{title},#{content},#{kcal},#{sodium},#{fat},#{saccharide},#{protein},#{caffeine},#{originalfilename},#{newfilename},SYSDATE,#{category})
+  	</insert>
+  	<select id="selectCoffee" parameterType="String" resultType="com.hb.star.model.MenuVo">
+  		SELECT * FROM MENU WHERE CATEGORY=#{coffee}
+  	</select>
+  	<select id="selectBeverage" parameterType="String" resultType="com.hb.star.model.MenuVo">
+  		SELECT * FROM MENU WHERE CATEGORY=#{beverage}
+  	</select>
+  	<select id="selectFood" parameterType="String" resultType="com.hb.star.model.MenuVo">
+  		SELECT * FROM MENU WHERE CATEGORY=#{food}
+  	</select>
+  	<select id="selectOne" parameterType="int" resultType="com.hb.star.model.MenuVo">
+  		SELECT * FROM MENU WHERE NO=#{no}
+  	</select>
+  	<delete id="deleteOne" parameterType="int">
+  		DELETE FROM MENU WHERE NO=#{no}
+  	</delete>
+  </mapper>
