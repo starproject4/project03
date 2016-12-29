@@ -57,7 +57,7 @@
 		<div class="row">
 		<!-- 여기부터 입력합니다 -->
 			
-			<div id="left"><img src="/star/resources/imgs/upload/${bean.newfilename }"></div>
+			<div id="left"><img src="/star/resources/imgs/menus/${bean.newfilename }"></div>
 			<div id="right">
 				<h1>${bean.title }</h1>
 				<p>영어이름컬럼추가</p>

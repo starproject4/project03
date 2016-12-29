@@ -27,7 +27,7 @@
 	          %>
                   <a class="btn btn-default" role="button" href="/star/members/logout" title="">Log-out</a>
                   <a class="btn btn-default" role="button" href="/star/members/mypage" title="">My Page</a>
-                  <a class="btn btn-default" role="button" href="#signIn" title="">Siren order</a>
+                  <a class="btn btn-default" role="button" href="/star/order/orderpage" title="">Siren order</a>
 	            <%
 	    			}
 	            }else{
@@ -63,7 +63,7 @@
 	          %>
                   <a class="btn btn-default" role="button" href="/star/members/logout" title="">Log-out</a>
                   <a class="btn btn-default" role="button" href="/star/members/mypage" title="">My Page</a>
-                  <a class="btn btn-default" role="button" href="#signIn" title="">Siren order</a>
+                  <a class="btn btn-default" role="button" href="/star/order/orderpage" title="">Siren order</a>
 	            <%
 	    			}
 	            }else{
@@ -77,7 +77,7 @@
         </div>
           <ul class="nav navbar-nav"> 
            <!-- 클릭하면 메뉴 나옴 -> 메뉴 마우스 오버시 서브 메뉴 나오게 수정하기 -->
-            <li><a href="#Card">Siren order</a></li>
+            <li><a href="/star/order/orderpage">Siren order</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu<span>▼</span></a>
               <ul class="dropdown-menu">

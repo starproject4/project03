@@ -6,7 +6,7 @@
   <mapper namespace="com.hb.star.model.UserDao">
   	
   	<insert id="insertOne" parameterType="com.hb.star.model.UserVo">
-  	INSERT INTO MEMBER VALUES (#{id},#{pw},#{name},#{birth},#{phone},#{email},#{addr},0,'GREEN')
+  	INSERT INTO MEMBER VALUES (#{id},#{pw},#{name},#{birth},#{phone},#{email},#{addr},0,'GREEN',0)
   	</insert>
   	
   	<select id="selectOne" parameterType="String" resultType="com.hb.star.model.UserVo">

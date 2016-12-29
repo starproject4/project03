@@ -11,13 +11,15 @@ public class UserVo {
 	private String addr;
 	private int star;
 	private String grade;
+	private int point;
 	
 	public UserVo() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public UserVo(String id, String pw, String name, String birth,
-			String phone, String email, String addr, int star, String grade) {
+			String phone, String email, String addr, int star, String grade,
+			int point) {
 		super();
 		this.id = id;
 		this.pw = pw;
@@ -28,6 +30,7 @@ public class UserVo {
 		this.addr = addr;
 		this.star = star;
 		this.grade = grade;
+		this.point = point;
 	}
 
 	public String getId() {
@@ -102,12 +105,20 @@ public class UserVo {
 		this.grade = grade;
 	}
 
+	public int getPoint() {
+		return point;
+	}
+
+	public void setPoint(int point) {
+		this.point = point;
+	}
+
 	@Override
 	public String toString() {
 		return "UserVo [id=" + id + ", pw=" + pw + ", name=" + name
 				+ ", birth=" + birth + ", phone=" + phone + ", email=" + email
 				+ ", addr=" + addr + ", star=" + star + ", grade=" + grade
-				+ "]";
+				+ ", point=" + point + "]";
 	}
 
 	@Override
@@ -117,10 +128,13 @@ public class UserVo {
 		result = prime * result + ((addr == null) ? 0 : addr.hashCode());
 		result = prime * result + ((birth == null) ? 0 : birth.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((grade == null) ? 0 : grade.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((phone == null) ? 0 : phone.hashCode());
+		result = prime * result + point;
 		result = prime * result + ((pw == null) ? 0 : pw.hashCode());
+		result = prime * result + star;
 		return result;
 	}
 
@@ -148,6 +162,11 @@ public class UserVo {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
+		if (grade == null) {
+			if (other.grade != null)
+				return false;
+		} else if (!grade.equals(other.grade))
+			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -163,10 +182,14 @@ public class UserVo {
 				return false;
 		} else if (!phone.equals(other.phone))
 			return false;
+		if (point != other.point)
+			return false;
 		if (pw == null) {
 			if (other.pw != null)
 				return false;
 		} else if (!pw.equals(other.pw))
+			return false;
+		if (star != other.star)
 			return false;
 		return true;
 	}
