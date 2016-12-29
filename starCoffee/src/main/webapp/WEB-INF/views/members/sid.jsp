@@ -23,31 +23,34 @@
 		
 		$('form').on('submit',function(){
 			$.ajax({
-				url:"/star/members/login",
+				url:"/star/members/searchid",
 				type:'post',
 				data: {
-					id:$('#id').val()
-					, pw:$('#pw').val()
+					name:$('#name').val()
+					, phone:$('#phone').val()
 					},
 				success: function(data){
 					if($.trim(data)==""){
 						alert("다시한번 확인해 주세요.");
-						$("#id").val("");
-						$("#pw").val("");
+						$("#name").val("");
+						$("#phone").val("");
 					    return false;
 					}else{
-						alert("환영합니다!");
-						window.location.replace("/star/");
+						var d = data;
+						var l = d.length;
+						alert("ID는 '"+d.slice(0,l-2)+"**' 입니다.");
+						$("#name").val("");
+						$("#phone").val("");
 					}
 				}
 			});
 		    return false;
 		});
 		
-		$("#sInfo").click(function(){
+		/* $("#sInfo").click(function(){
 			window.location.replace("/star/members/sid");
 		});
-		
+		 */
 	});
 </script>
 </head>
@@ -61,16 +64,16 @@
        <form class="form-horizontal" action="/star/" method="post">
        
 		  <div class="form-group">
-		    <label for="id" class="col-sm-4 control-label">아이디</label>
+		    <label for="name" class="col-sm-4 control-label">이름</label>
 		    <div class="col-sm-4">
-		      <input type="text" class="form-control" id="id" name="id" />
+		      <input type="text" class="form-control" id="name" name="name" />
 		    </div>
 		  </div>
 		  
 		  <div class="form-group">
-		    <label for="pw" class="col-sm-4 control-label">비밀번호</label>
+		    <label for="phone" class="col-sm-4 control-label">전화번호</label>
 		    <div class="col-sm-4">
-		      <input type="password" class="form-control" id="pw" name="pw" />
+		      <input type="text" class="form-control" id="phone" name="phone" placeholder="010-1234-1234"/>
 		    </div>
 		  </div>
 		  
@@ -78,8 +81,8 @@
 		  
 		  <div class="form-group">
 		    <div class="col-sm-offset-6 col-sm-5">	
-		      <button type="button" class="btn btn-default" id="sInfo">ID / PW 찾기</button>
-		      <button type="submit" class="btn btn-success">로그인</button>
+		      <button type="submit" class="btn btn-default">ID 찾기</button>
+		      <button type="button" class="btn btn-default" >PW 찾기</button>
 		    </div>
 		  </div>
 		</form>

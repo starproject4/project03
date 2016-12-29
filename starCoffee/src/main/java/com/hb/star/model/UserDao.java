@@ -7,4 +7,5 @@ public interface UserDao {
 	UserVo login(UserVo bean);
 	void updateOne(UserVo bean);
 	void deleteOne(String id);
+	UserVo searchid(UserVo bean);
 }

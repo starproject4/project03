@@ -66,7 +66,7 @@ public class UserController {
 		
 		if(result !=null){
 			//로그인 성공
-			System.out.println(":>"+result.getId());
+//			System.out.println(":>"+result.getId());
 			session.setAttribute("result", true);
 			session.setAttribute("id", result.getId());
 		}else{
@@ -77,7 +77,21 @@ public class UserController {
 		return "/members/idck";
 	}
 	
-	//id,찾기(modal)
+	//id 찾기
+	@RequestMapping(value="sid")
+	public void sid(){
+		
+	}
+	
+	@RequestMapping(value="searchid", method=RequestMethod.POST)
+	public String searchid(Model model, UserVo bean, HttpSession session){
+		
+		UserDao mapper = sqlSession.getMapper(UserDao.class);
+		UserVo result = mapper.searchid(bean);
+		model.addAttribute("bean", result);
+		
+		return "/members/idck";
+	}
 	
 	//로그아웃
 	@RequestMapping(value="/logout", method=RequestMethod.GET)

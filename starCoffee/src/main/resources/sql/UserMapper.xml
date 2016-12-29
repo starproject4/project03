@@ -17,6 +17,10 @@
   	SELECT id,pw FROM MEMBER WHERE ID=#{id} AND PW=#{pw}
   	</select>
   	
+  	<select id="searchid" parameterType="com.hb.star.model.UserVo" resultType="com.hb.star.model.UserVo">
+  	SELECT id FROM MEMBER WHERE NAME=#{name} AND PHONE=#{phone}
+  	</select>
+  	
   	<update id="updateOne" parameterType="com.hb.star.model.UserVo">
   	UPDATE MEMBER SET PW=#{pw},NAME=#{name},BIRTH=#{birth},PHONE=#{phone},EMAIL=#{email},ADDR=#{addr} WHERE ID=#{id}
   	</update>
