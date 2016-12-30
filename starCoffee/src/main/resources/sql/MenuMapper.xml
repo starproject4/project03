@@ -8,7 +8,7 @@
   		SELECT * FROM MENU
   	</select>
   	<insert id="insertOne" parameterType="com.hb.star.model.MenuVo">
-  		INSERT INTO MENU VALUES(MENU_SEQ.NEXTVAL,#{title},#{content},#{kcal},#{sodium},#{fat},#{saccharide},#{protein},#{caffeine},#{originalfilename},#{newfilename},SYSDATE,#{category})
+  		INSERT INTO MENU VALUES(MENU_SEQ.NEXTVAL,#{title},#{content},#{kcal},#{sodium},#{fat},#{saccharide},#{protein},#{caffeine},#{originalfilename},#{newfilename},SYSDATE,#{category},#{price})
   	</insert>
   	<select id="selectCoffee" parameterType="String" resultType="com.hb.star.model.MenuVo">
   		SELECT * FROM MENU WHERE CATEGORY=#{coffee}

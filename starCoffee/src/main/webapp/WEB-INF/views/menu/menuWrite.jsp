@@ -55,6 +55,10 @@
 					<label for="content">content</label>
 					<textarea rows="20" cols="80" name="content" id="content"></textarea>
 				</p>
+				<p>
+					<label for="price">price</label>
+					<input type="text" name="price" id="price">
+				</p>
 				<select name="category">
 					<option value="">제품분류</option>
 					<option value="커피">커피</option>

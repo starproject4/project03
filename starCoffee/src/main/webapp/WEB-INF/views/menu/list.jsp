@@ -21,7 +21,7 @@
 				<input type="checkbox" name="delchk" value="${bean.no }">
 			</div>
 			<div><a href="/star/menu/detail?no=${bean.no }">
-				<img src="/star/resources/imgs/menus/${bean.newfilename }">
+				<img src="/star/resources/imgs/coffee/${bean.newfilename }">
 			</a></div>
 				<div class="text-center">${bean.title }</div>
 		</div>
