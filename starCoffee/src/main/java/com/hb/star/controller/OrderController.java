@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hb.star.model.MenuDao;
 import com.hb.star.model.OrderDao;
+import com.hb.star.model.OrderVo;
 
 @Controller
 @RequestMapping("/order")
@@ -33,5 +35,13 @@ public class OrderController {
 		MenuDao mapper = sqlSession.getMapper(MenuDao.class);
 		model.addAttribute("bean", mapper.selectOne(no));
 		return "/order/detailorder";
+	}
+	
+	@RequestMapping(value="/myCoffeeInsert", method=RequestMethod.POST)
+	public void idCk(OrderVo bean){	
+		
+		OrderDao mapper = sqlSession.getMapper(OrderDao.class);
+		mapper.myCoffeeInsert(bean);
+		System.out.println(bean);
 	}
 }

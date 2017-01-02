@@ -1,11 +1,6 @@
 package com.hb.star.controller;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
@@ -34,7 +29,7 @@ public class UserController {
 	
 	@RequestMapping(value="/userInsert", method=RequestMethod.POST)
 	public String UserInsert(UserVo bean){	//회원가입
-		System.out.println(">>>"+bean);
+		//System.out.println(">>>"+bean);
 		
 		UserDao mapper = sqlSession.getMapper(UserDao.class);
 		mapper.insertOne(bean);

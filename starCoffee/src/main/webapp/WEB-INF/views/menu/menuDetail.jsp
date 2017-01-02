@@ -66,8 +66,8 @@
 				<hr/>
 				<table>
 					<tr>
-						<td>일반 / 1회 제공량 (kcal)   ${bean.kcal }</td>
-						<td>당류(g)   ${bean.saccharide}</td>
+						<td>일반 / 1회 제공량 (kcal)   <code>${bean.kcal }</code></td>
+						<td>당류(g)   <code>${bean.saccharide}</code></td>
 					</tr>
 				</table>
 				<p>
