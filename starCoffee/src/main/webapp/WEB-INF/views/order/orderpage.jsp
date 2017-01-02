@@ -26,8 +26,8 @@
 	<div class="container content">
 		<ul class="nav nav-tabs">
 		  <li role="presentation" class="active"><a href="/star/order/orderpage"><strong>주문하기</strong></a></li>
-		  <li role="presentation"><a href="#"><strong>나만의 메뉴</strong></a></li>
-		  <li role="presentation"><a href="#"><strong>히스토리</strong></a></li>
+		  <li role="presentation"><a href="/star/order/mycoffeepage"><strong>나만의 메뉴</strong></a></li>
+		  <li role="presentation"><a href="/star/history/historypage"><strong>히스토리</strong></a></li>
 		</ul>
 		<hr/>
 		<div class="row">
@@ -43,6 +43,7 @@
 		  </div>
 		</c:forEach>
 		</div>
+	</div>
 		
 	<!-- /.container -->
 	<!-- 여기까지 본문 -->

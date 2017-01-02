@@ -61,7 +61,7 @@ public class UserController {
 		
 		if(result !=null){
 			//로그인 성공
-//			System.out.println(":>"+result.getId());
+			//System.out.println(":>"+ result.getPoint());
 			session.setAttribute("result", true);
 			session.setAttribute("id", result.getId());
 		}else{

@@ -39,6 +39,7 @@ $(document).ready(function(){
 		var r = $('input[name=rice]:checked').val();
 		$('#ice').val(r);
 		
+		var no = $('#no').val();
 		$.ajax({
 			url:"/star/order/myCoffeeInsert",
 			type:'post',
@@ -48,27 +49,22 @@ $(document).ready(function(){
 				, price:$('#price').val()
 				, cupsize:$('#cupsize').val()
 				, ice:$('#ice').val()
+				, newfilename:$('#newfilename').val()
 				},
-			success: function(){
-				/* alert("ah");
-				 if($.trim(data)==""){
-					alert("다시한번 확인해 주세요.");
-					$("#id").val("");
-					$("#pw").val("");
-				    return false;
-				}else{
-					alert("환영합니다!");
-					window.location.replace("/star/order/detailorder?no=");
-				}  */
-			//window.location.replace("/star/order/detailorder?no="+$('#no').val());
-				return false;
+			success: function(data){
+				alert("나만의 메뉴에 등록되었습니다.");
+				window.location.replace("/star/order/detailorder?no="+data);
 			}
 		});
-	    return false;
 		
 	});
 	
-	
+	 $('form').on('submit',function(){
+		 var rcup = $('input[name=rcupsize]:checked').val();
+		$('#cupsize').val(rcup);
+		var r = $('input[name=rice]:checked').val();
+		$('#ice').val(r);
+	 });
 	
 var prebtn = ${bean.no}-1;
 var nextbtn = ${bean.no}+1;
@@ -104,11 +100,11 @@ var nextbtn = ${bean.no}+1;
 	<div class="container content">
 		<ul class="nav nav-tabs">
 		  <li role="presentation" class="active"><a href="/star/order/orderpage"><strong>주문하기</strong></a></li>
-		  <li role="presentation"><a href="#"><strong>나만의 메뉴</strong></a></li>
-		  <li role="presentation"><a href="#"><strong>히스토리</strong></a></li>
+		  <li role="presentation"><a href="/star/order/mycoffeepage"><strong>나만의 메뉴</strong></a></li>
+		  <li role="presentation"><a href="/star/history/historypage"><strong>히스토리</strong></a></li>
 		</ul>
 		<hr/>
-	    <form action="/star/order/myfavorites">
+	    <form action="/star/order/paypage" method="post">
 		<div class="row">
 		  <div class="col-md-4">
 		  	<a href="/star/menu/detail?no=${bean.no }">
@@ -137,7 +133,7 @@ var nextbtn = ${bean.no}+1;
 				  </div><!-- /.col-lg-6 -->
 			  </div>
 			      
-			  <hr/>
+			   <hr/><hr/><hr/>
 		      <div class="col-md-12">
 			      <label>컵 사이즈</label>	 
 			      <div class="btn-group" data-toggle="buttons" id="one">
@@ -153,7 +149,7 @@ var nextbtn = ${bean.no}+1;
 					</div>
 				</div>  
 		      
-		      <hr/>
+		      <hr/><hr/>
 		      <div class="col-md-12">
 			      <label>얼음 양</label>	 
 			      <div class="btn-group" data-toggle="buttons">
@@ -171,20 +167,21 @@ var nextbtn = ${bean.no}+1;
 					  </label>
 					</div>
 				</div> 
-				
+			
 				
 			  <input type="hidden" name="no" id="no" value="${bean.no }">
 			  <input type="hidden" name="name" id="name" value="${bean.title }">
 			  <input type="hidden" name="price" id="price" value="${bean.price }">
 			  <input type="hidden" name="cupsize" id="cupsize" value="tall">
 			  <input type="hidden" name="ice" id="ice" value="">
+			  <input type="hidden" name="newfilename" id="newfilename" value="${bean.newfilename }">
 				
 		      <hr/><hr/><hr/>
 		      <div class="col-md-6">
-			      <button type="submit" class="btn btn-default btn-lg btn-block" id="myfavorites">나만의메뉴 담기</button>
+			      <button type="button" class="btn btn-default btn-lg btn-block" id="myfavorites">나만의 메뉴 담기</button>
 			  </div>
 		      <div class="col-md-6">
-			      <button type="button" class="btn btn-success btn-lg btn-block">주문하기</button>
+			      <button type="submit" class="btn btn-success btn-lg btn-block">바로 주문하기</button>
 			  </div>
 		      
 			</div><!-- col-md-5 -->

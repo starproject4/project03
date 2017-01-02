@@ -105,6 +105,13 @@
 		    </div>
 		  </div>
 		  
+		  <div class="form-group grade">
+		    <label for="grade" class="col-sm-5 control-label">포인트</label>
+		    <div class="col-sm-6">
+		      <label for="grade" class="control-label" >${bean.point }</label>
+		    </div>
+		  </div>
+		  
 		 
 		  
 		  <div class="form-group">

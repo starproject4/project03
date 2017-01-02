@@ -8,4 +8,7 @@ public interface UserDao {
 	void updateOne(UserVo bean);
 	void deleteOne(String id);
 	UserVo searchid(UserVo bean);
+	void updatePoint(UserVo bean);
+	
+	
 }

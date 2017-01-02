@@ -5,10 +5,17 @@
   
   <mapper namespace="com.hb.star.model.OrderDao">
   	
-  	<insert id="myCoffeeInsert" parameterType="com.hb.star.model.OrderVo">
-  	INSERT INTO MYFAVORITES VALUES (#{name},#{price},#{cupsize},#{ice},#{no})
+  	<insert id="insertMycoffee" parameterType="com.hb.star.model.OrderVo">
+  	INSERT INTO MYFAVORITES VALUES (#{name},#{price},#{cupsize},#{ice},#{no},MYFAVORITES_SEQ.NEXTVAL,#{newfilename})
   	</insert>
   	
+  	<select id="selectAll" resultType="com.hb.star.model.OrderVo">
+  		SELECT * FROM MYFAVORITES
+  	</select>
+  	
+  	<delete id="deleteMycoffee" parameterType="int">
+  	DELETE FROM MYFAVORITES WHERE MYPK=#{mypk}
+  	</delete>
   	
   	
   </mapper>

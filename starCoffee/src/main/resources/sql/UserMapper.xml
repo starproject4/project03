@@ -14,7 +14,7 @@
   	</select>
   
   	<select id="login" parameterType="com.hb.star.model.UserVo" resultType="com.hb.star.model.UserVo">
-  	SELECT id,pw FROM MEMBER WHERE ID=#{id} AND PW=#{pw}
+  	SELECT id,pw,point FROM MEMBER WHERE ID=#{id} AND PW=#{pw}
   	</select>
   	
   	<select id="searchid" parameterType="com.hb.star.model.UserVo" resultType="com.hb.star.model.UserVo">
@@ -28,6 +28,11 @@
   	<delete id="deleteOne" parameterType="String">
   	DELETE FROM MEMBER WHERE ID=#{value}
   	</delete>
+  	
+  	
+  	<update id="updatePoint" parameterType="com.hb.star.model.UserVo">
+  	UPDATE MEMBER SET STAR=#{star},POINT=#{point} WHERE ID=#{id}
+  	</update>
   	
   </mapper>
   

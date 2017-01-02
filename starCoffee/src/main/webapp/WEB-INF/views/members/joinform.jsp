@@ -12,9 +12,7 @@
     <link href="/star/resources/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/star/resources/css/star.css" rel="stylesheet">
 	<style type="text/css">
-	body {
-		  padding-top: 200px;
-		}
+	
 </style>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>

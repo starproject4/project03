@@ -7,18 +7,23 @@ public class OrderVo {
 	private int price;
 	private String cupsize;
 	private String ice;
+	private int mypk;
+	private String newfilename;	
 	
 	public OrderVo() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public OrderVo(int no, String name, int price, String cupsize, String ice) {
+	public OrderVo(int no, String name, int price, String cupsize, String ice,
+			int mypk, String newfilename) {
 		super();
 		this.no = no;
 		this.name = name;
 		this.price = price;
 		this.cupsize = cupsize;
 		this.ice = ice;
+		this.mypk = mypk;
+		this.newfilename = newfilename;
 	}
 
 	public int getNo() {
@@ -61,10 +66,27 @@ public class OrderVo {
 		this.ice = ice;
 	}
 
+	public int getMypk() {
+		return mypk;
+	}
+
+	public void setMypk(int mypk) {
+		this.mypk = mypk;
+	}
+
+	public String getNewfilename() {
+		return newfilename;
+	}
+
+	public void setNewfilename(String newfilename) {
+		this.newfilename = newfilename;
+	}
+
 	@Override
 	public String toString() {
 		return "OrderVo [no=" + no + ", name=" + name + ", price=" + price
-				+ ", cupsize=" + cupsize + ", ice=" + ice + "]";
+				+ ", cupsize=" + cupsize + ", ice=" + ice + ", mypk=" + mypk
+				+ ", newfilename=" + newfilename + "]";
 	}
 
 	@Override
@@ -73,7 +95,10 @@ public class OrderVo {
 		int result = 1;
 		result = prime * result + ((cupsize == null) ? 0 : cupsize.hashCode());
 		result = prime * result + ((ice == null) ? 0 : ice.hashCode());
+		result = prime * result + mypk;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result
+				+ ((newfilename == null) ? 0 : newfilename.hashCode());
 		result = prime * result + no;
 		result = prime * result + price;
 		return result;
@@ -98,10 +123,17 @@ public class OrderVo {
 				return false;
 		} else if (!ice.equals(other.ice))
 			return false;
+		if (mypk != other.mypk)
+			return false;
 		if (name == null) {
 			if (other.name != null)
 				return false;
 		} else if (!name.equals(other.name))
+			return false;
+		if (newfilename == null) {
+			if (other.newfilename != null)
+				return false;
+		} else if (!newfilename.equals(other.newfilename))
 			return false;
 		if (no != other.no)
 			return false;
@@ -109,5 +141,6 @@ public class OrderVo {
 			return false;
 		return true;
 	}
-	
+
+
 }
